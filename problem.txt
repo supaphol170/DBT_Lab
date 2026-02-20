@@ -1,0 +1,9 @@
+--Problem
+-- 1.Creating Warehouse, DB, table from 'ACCOUNTADMIN' 
+--  but I need to protect my root account so I used 2MFA, that's make can't use with automatic connect in DBT
+-- Solve by create 1 user from 'ACCOUNTADMIN'(root) and grant 'SYSADMIN' to make this user can manipulate in DB
+
+-- 2. event they can connect but Database invinsible for DBT
+-- Solve by grant permission name db to 'SYSADMIN' can see.
+
+--Default role in snowflake is 'transformer'
