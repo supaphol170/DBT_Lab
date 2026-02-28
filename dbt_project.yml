@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'dbt_fundamental_on_demand'
+name: 'practice_dbt_fundamental'
 version: '1.0.0'
 config-version: 2
 
@@ -36,10 +36,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  dbt_fundamental_on_demand:
+  practice_dbt_fundamental:
     # using view cuz it's staging that easy to update any information, that'a make data is up to date
     staging:
-      +materialized: view
+      jaffle_shop:
+        +materialized: view
     # In mart folder we use table cuz this folder will connect with BI tool and table object can pull to show not execute every time like view object.
     mart:
-      +materialized: table
+      marketing:
+        +materialized: table
