@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: raw 
+    tables:
+      - name: payments
+        columns:
+            - name: customer_id
+              description: A unique identifier for the customer associated with the payment.
+              data_tests:
+                - unique
+                - not_null
+            - name: order_id
+              description: A unique identifier for the order related to the payment.
+            - name: payment_method
+              description: The method used for the payment, such as credit card, bank transfer, coupon, gift_card.
+              data_tests:
+                - accepted_values:
+                    arguments:
+                      values:
+                        - credit_card
+                        - coupon
+                        - bank_transfer
+                        - gift_card
+            - name: payment_status
+              description: The status of the payment, such as success and fail.
+              data_tests:
+                - accepted_values:
+                    arguments:
+                      values:
+                        - success
+                        - fail
+            - name: payment_amount
+              description: The total amount of the payment in cents, converted to an integer.
+              data_tests:
+                - not_null
+            - name: created
+              description: The date when the payment was created.
