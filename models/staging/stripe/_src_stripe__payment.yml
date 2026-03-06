@@ -6,14 +6,14 @@ sources:
     tables:
       - name: payments
         columns:
-            - name: customer_id
+            - name: ID
               description: A unique identifier for the customer associated with the payment.
               data_tests:
                 - unique
                 - not_null
-            - name: order_id
+            - name: ORDERID
               description: A unique identifier for the order related to the payment.
-            - name: payment_method
+            - name: PAYMENTMETHOD
               description: The method used for the payment, such as credit card, bank transfer, coupon, gift_card.
               data_tests:
                 - accepted_values:
@@ -23,7 +23,7 @@ sources:
                         - coupon
                         - bank_transfer
                         - gift_card
-            - name: payment_status
+            - name: STATUS
               description: The status of the payment, such as success and fail.
               data_tests:
                 - accepted_values:
@@ -31,9 +31,9 @@ sources:
                       values:
                         - success
                         - fail
-            - name: payment_amount
+            - name: AMOUNT
               description: The total amount of the payment in cents, converted to an integer.
               data_tests:
                 - not_null
-            - name: created
+            - name: CREATED
               description: The date when the payment was created.

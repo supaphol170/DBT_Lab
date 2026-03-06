@@ -21,6 +21,6 @@ models:
   - name: orders_id
     description: A unique identifier for each order associated with the customer.
   - name: order_date
-    description: The date when the order was placed.
+    description: The date when the order was placed. if date null, will replace to '1900-01-01'
   - name: order_status
     description: The current status of the order, indicating its progress or completion.
