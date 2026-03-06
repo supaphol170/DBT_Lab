@@ -1,0 +1,26 @@
+models:
+- name: dim_customers
+  description: This model consolidates customer and order data to provide a comprehensive
+    view of customer interactions and transactions. It combines customer details with
+    their respective orders, allowing for analysis of customer behavior and order
+    patterns.
+  columns:
+  - name: customer_id
+    description: A unique identifier for each customer. This is a Primary key
+    data_tests:
+      - not_null
+      - unique
+  - name: first_name
+    description: The first name of the customer.
+    data_tests:
+      - not_null
+  - name: last_name
+    description: The last name of the customer.
+    data_tests:
+      - not_null
+  - name: orders_id
+    description: A unique identifier for each order associated with the customer.
+  - name: order_date
+    description: The date when the order was placed.
+  - name: order_status
+    description: The current status of the order, indicating its progress or completion.

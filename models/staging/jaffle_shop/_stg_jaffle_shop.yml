@@ -27,8 +27,11 @@ models:
                   - placed
                   - return_pending
       - name: customer_id
+        description: The unique identifier for the customer who placed the order, linking to the customers table.
         data_tests:
           - relationships:
               arguments:
                 field: customer_id
                 to: ref('stg_jaffle_shop__customers')
+      - name: order_date
+        description: The date on which the order was placed.
