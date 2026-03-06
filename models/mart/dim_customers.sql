@@ -9,7 +9,7 @@ orders AS (
 final AS (
     SELECT *
     FROM customers
-    INNER JOIN orders ON customers.customer_id = orders.orders_id
+    INNER JOIN orders ON customers.customer_id = orders.customers_id
 )
 SELECT *
 FROM final
